@@ -23,7 +23,7 @@ def reconstruct_trip(tickets, length):
     for ticket in tickets: # O(n)
         hash_table_insert(ht, ticket.source, ticket.destination)
 
-    route[0] = hash_table_retrieve(ht, None)
+    route[0] = hash_table_retrieve(ht, "NONE")
 
     for i in range(1, length): # O(n)
         route[i] = hash_table_retrieve(ht, route[i - 1])
