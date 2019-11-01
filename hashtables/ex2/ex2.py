@@ -26,5 +26,6 @@ def reconstruct_trip(tickets, length):
     route[0] = hash_table_retrieve(ht, "NONE")
 
     for i in range(1, length): # O(n)
+        # retrive the current using the previous destination as source
         route[i] = hash_table_retrieve(ht, route[i - 1])
     return route
